@@ -105,13 +105,13 @@ p {
       let x1 = ((( -1 * b ) + Math.sqrt( (b * b) - 4 * a * c ) ) / (2 * a) );
       let x2 = ((( -1 * b ) - Math.sqrt( (b * b) - 4 * a * c ) ) / (2 * a) );
       if (Number.isInteger(x1) == false) {
-        x1 = "Not an integer";
+        x1 = "not an integer";
       }     
       if (Number.isInteger(x2) == false) {
-        x2 = "Not an integer";
+        x2 = "not an integer";
       }
-      document.getElementById("answer1").innerHTML = "X1 = " + x1;
-      document.getElementById("answer2").innerHTML = "X2 = " + x2;
+      document.getElementById("answer1").innerHTML = "X1 is " + x1;
+      document.getElementById("answer2").innerHTML = "X2 is " + x2;
 }
 </script>
 
