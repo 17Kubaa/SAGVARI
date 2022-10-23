@@ -9,31 +9,51 @@
 <body>
     <h1>Welcome</h1>
     <div id="textbox">
-        <p id="bio">Csak annyit kell tudnod, utálom a másodfokú egyenleteket</p>
+
+        <p id="bio">I hate quadratic equations. So heres a solver:</p>
+
+        <p id="texts">Enter value</p>
+
+        <input id="a">
+        <p id="texts">A value</p>
+        <br>
+        <input id="b">
+        <p id="texts">B value</p>
+        <br>
+        <input id="c">
+        <p id="texts">C value</p>
+        <br>
+
+        <button type="button" onclick="gyok()">Calculate</button>
+
+        <p id="answer1"></p>
+        <p id="answer2"></p>
 
         <br>
 
-        <p id="credit">My designs:</p>
+        <p id="credit">Also digital artist</p>
+        
 
         <div id="pics">
-            <img src="kep1-min.png" style="width: 30%;" height="30%">
+            <img src="kep1.png" style="width: 30%;" height="30%">
             <img src="kep2.jpg" style="width: 30%;" height="30%">
             <img src="kep3.jpg" style="width: 30%;" height="30%">
-            <img src="kep4-min.png" style="width: 30%;" height="30%">
+            <img src="kep4.png" style="width: 30%;" height="30%">
             <img src="kep5.png" style="width: 30%;" height="30%">
-            <img src="kep6-min.png" style="width: 30%;" height="30%">
-            <img src="kep7-min.png" style="width: 30%;" height="30%">
+            <img src="kep6.png" style="width: 30%;" height="30%">
+            <img src="kep7.png" style="width: 30%;" height="30%">
             <img src="kep8.jpg" style="width: 30%;" height="30%">
-            <img src="SpinGIF.gif" alt="spin" style="width: 30%;" height="30%">
+            <img src="Spin.gif" alt="spin" style="width: 30%;" height="30%">
             <img src="kep10.jpg" style="width: 30%;" height="30%">
             <img src="kep11.png" style="width: 30%;" height="30%">
-            <img src="Videogif.gif" alt="record" style="width: 30%;" height="30%">
+            <img src="Record.gif" alt="record" style="width: 30%;" height="30%">
 
         </div>
 
         <p id="ends">All rendered in blender</p>
 
     </div>
+
 </body>
 <style>
 #textbox {
@@ -54,6 +74,9 @@ h1 {
     text-align: center;
     font-size: 120px;
 }
+p {
+    color: white;
+}
 #bio {
     color: white;
     text-align: center;
@@ -69,5 +92,27 @@ h1 {
 #ends {
     text-align: end;
 }
+#texts {
+    color: white;
+}
 </style>
+
+<script>
+    function gyok() {
+      let a = Number(document.getElementById("a").value);
+      let b = Number(document.getElementById("b").value);
+      let c = Number(document.getElementById("c").value);
+      let x1 = ((( -1 * b ) + Math.sqrt( (b * b) - 4 * a * c ) ) / (2 * a) );
+      let x2 = ((( -1 * b ) - Math.sqrt( (b * b) - 4 * a * c ) ) / (2 * a) );
+      if (Number.isInteger(x1) == false) {
+        x1 = "Not an integer";
+      }     
+      if (Number.isInteger(x2) == false) {
+        x2 = "Not an integer";
+      }
+      document.getElementById("answer1").innerHTML = x1;
+      document.getElementById("answer2").innerHTML = x2;
+}
+</script>
+
 </html>
