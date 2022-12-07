@@ -31,25 +31,37 @@
 
         <br>
 
+        <p>Guess my favourite food</p>
+        <input type="text" id="foodguess">
+        <button id="foodbutton" onclick="food()">Guess</button>
+        <p id="result"></p>
+        <button id="hintbutton" onclick="hint()">hint</button>
+        <p id="hint"></p>
+
+        <br>
+
         <p id="credit">Also digital artist</p>
         
+        <br>
+
+        <button type="button" onclick="loadimages()" id="imageshowbutton">Show images</button>
+
+        <br>
 
         <div id="pics">
-            <img src="kep1.png" style="width: 33%;" height="33%">
-            <img src="kep2.jpg" style="width: 33%;" height="33%">
-            <img src="kep3.jpg" style="width: 33%;" height="33%">
-            <img src="kep4.png" style="width: 33%;" height="33%">
-            <img src="kep5.png" style="width: 33%;" height="33%">
-            <img src="kep6.png" style="width: 33%;" height="33%">
-            <img src="kep7.png" style="width: 33%;" height="33%">
-            <img src="kep8.jpg" style="width: 33%;" height="33%">
-            <img src="Spin.gif" alt="spin" style="width: 33%;" height="33%">
-            <img src="kep10.jpg" style="width: 33%;" height="33%">
-            <img src="kep11.png" style="width: 33%;" height="33%">
-            <img src="Record.gif" alt="record" style="width: 33%;" height="33%">
-
+            <img id="image1" display="none">
+            <img id="image2" display="none">
+            <img id="image3" display="none">
+            <img id="image4" display="none">
+            <img id="image5" display="none">
+            <img id="image6" display="none">
+            <img id="image7" display="none">
+            <img id="image8" display="none">
+            <img id="image10" display="none">
+            <img id="image11" display="none">
         </div>
-
+        <img src="Record.gif" alt="record">
+        <img src="Spin.gif" alt="spin">
         <br>
 
         <a href="https://github.com/17Kubaa">
@@ -109,6 +121,10 @@ p {
     position: relative;
     left: 95%;
 }
+img {
+    width: 33%;
+    height: 33%;
+}
 </style>
 
 <script>
@@ -126,6 +142,45 @@ p {
       }
       document.getElementById("answer1").innerHTML = x1;
       document.getElementById("answer2").innerHTML = x2;
+    }
+
+    function food() {
+        let guess = String(document.getElementById("foodguess").value);
+        if ((guess == "egg") || (guess == "Egg")) {
+            result = "Correct";
+        } 
+        else {
+            result = "Wrong";
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function hint() {
+        let riddle = ("This is a type of food and its shape is an oval Humpty Dumpty was one before he fell off a wall")
+        document.getElementById("hint").innerHTML = riddle;
+    }
+
+    function loadimages() {
+        let image1 = document.getElementById("image1");
+        image1.src ="kep1.png";
+        let image2 = document.getElementById("image2");
+        image2.src ="kep2.jpg";
+        let image3 = document.getElementById("image3");
+        image3.src ="kep3.jpg";
+        let image4 = document.getElementById("image4");
+        image4.src ="kep4.png";
+        let image5 = document.getElementById("image5");
+        image5.src ="kep5.png";
+        let image6 = document.getElementById("image6");
+        image6.src ="kep6.png";
+        let image7 = document.getElementById("image7");
+        image7.src ="kep7.png";
+        let image8 = document.getElementById("image8");
+        image8.src ="kep8.jpg";
+        let image10 = document.getElementById("image10");
+        image10.src ="kep10.jpg";
+        let image11 = document.getElementById("image11");
+        image11.src ="kep11.png";
 }
 </script>
 
